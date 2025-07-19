@@ -1,4 +1,6 @@
 import { getLanguage, setLanguage } from '../utils';
+import { APP_TYPES } from '../constants/appTypes';
+import type { AppType } from '../constants/appTypes';
 import {
   Header,
   HeaderTitle,
@@ -14,7 +16,7 @@ const HeaderComponent = ({
   selectedApp,
 }: {
   setSelectedApp: (app: string) => void;
-  selectedApp?: 'rick-and-morty' | 'harry-potter';
+  selectedApp?: AppType;
 }) => {
   const { t } = useTranslation();
   const language = getLanguage();
@@ -24,14 +26,14 @@ const HeaderComponent = ({
       <HeaderTitle>{t('title')}</HeaderTitle>
       <HeaderNav>
         <HeaderNavButton
-          onClick={() => setSelectedApp('rick-and-morty')}
-          className={selectedApp === 'rick-and-morty' ? 'active' : ''}
+          onClick={() => setSelectedApp(APP_TYPES.RICK_AND_MORTY)}
+          className={selectedApp === APP_TYPES.RICK_AND_MORTY ? 'active' : ''}
         >
           Rick & Morty
         </HeaderNavButton>
         <HeaderNavButton
-          onClick={() => setSelectedApp('harry-potter')}
-          className={selectedApp === 'harry-potter' ? 'active' : ''}
+          onClick={() => setSelectedApp(APP_TYPES.HARRY_POTTER)}
+          className={selectedApp === APP_TYPES.HARRY_POTTER ? 'active' : ''}
         >
           Harry Potter
         </HeaderNavButton>
