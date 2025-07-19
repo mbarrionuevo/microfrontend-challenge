@@ -13,3 +13,15 @@ Run `pnpm install`, then `pnpm run build` and `pnpm run serve`. This will build 
 - REMOTE: [localhost:3002](http://localhost:3002/)
 
 `CTRL + C` can only stop the host server. You can run `pnpm stop` to stop all services.
+
+## Testing
+
+To run tests:
+
+```bash
+# Host tests
+pnpm run test:host
+
+# Remote tests
+pnpm run test:remote
+```

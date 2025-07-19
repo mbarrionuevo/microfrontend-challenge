@@ -3,6 +3,8 @@ import Header from './components/Header';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { ContentArea, MainContainer } from './components/layout';
+import { APP_TYPES } from './constants/appTypes';
+import type { AppType } from './constants/appTypes';
 
 const RickAndMorty = lazy(() => import('RickAndMorty/CharacterList'));
 const HarryPotter = lazy(() => import('HarryPotter/CharacterList'));
@@ -23,25 +25,21 @@ export const WelcomeMessage = styled.div`
 `;
 
 function App() {
-  const [selectedApp, setSelectedApp] = useState<
-    'rick-and-morty' | 'harry-potter' | undefined
-  >();
+  const [selectedApp, setSelectedApp] = useState<AppType | undefined>();
   const { t, i18n } = useTranslation();
 
   return (
     <MainContainer>
       <Header
-        setSelectedApp={(app: string) =>
-          setSelectedApp(app as 'rick-and-morty' | 'harry-potter')
-        }
+        setSelectedApp={(app: string) => setSelectedApp(app as AppType)}
         selectedApp={selectedApp}
       />
       <ContentArea>
         <Suspense fallback={<div>Loading...</div>}>
-          {selectedApp === 'rick-and-morty' && (
+          {selectedApp === APP_TYPES.RICK_AND_MORTY && (
             <RickAndMorty language={i18n.language} />
           )}
-          {selectedApp === 'harry-potter' && (
+          {selectedApp === APP_TYPES.HARRY_POTTER && (
             <HarryPotter language={i18n.language} />
           )}
         </Suspense>
