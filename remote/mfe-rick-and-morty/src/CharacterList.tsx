@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { useGetCharacters } from './hooks/useGetCharacters';
 import { useTranslation } from 'react-i18next';
 
-const CharacterListContainer = styled.div`
+const CharacterListContainer = styled.main`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;
@@ -39,7 +39,7 @@ const CharacterImage = styled.img`
 
 const CharacterSkeleton = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;
@@ -97,9 +97,10 @@ const SkeletonText = styled.div`
   }
 `;
 
-const CharacterText = styled.div`
-  display: flex;
-  gap: 0.5rem;
+const CharacterText = styled.p`
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
 `;
 
 const SkeletonComponent = () => {
@@ -141,9 +142,7 @@ export default function CharacterList() {
             loading="lazy"
           />
           <CharacterText>
-            <p>
-              {t('character')}: <strong>{character.name}</strong>
-            </p>
+            {t('character')}: <strong>{character.name}</strong>
           </CharacterText>
         </CharacterCard>
       ))}

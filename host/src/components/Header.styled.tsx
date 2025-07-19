@@ -20,7 +20,7 @@ export const Header = styled.header`
 `;
 
 export const HeaderTitle = styled.h1`
-  color: #2d3748;
+  color: #1a202c;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
@@ -49,9 +49,9 @@ export const HeaderNavButton = styled.button`
   padding: 0.375rem 1rem;
   border-radius: 6px;
   border: 2px solid #e2e8f0;
-  background: #f8fafc;
-  color: #2d3748;
-  font-weight: 500;
+  background: #ffffff;
+  color: #1a202c;
+  font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -61,37 +61,45 @@ export const HeaderNavButton = styled.button`
 
   &:hover,
   &:focus {
-    border-color: #a0aec0;
-    color: #22223b;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-color: #4a5568;
+    color: #000000;
+    background: #f7fafc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     z-index: 1;
+  }
+
+  &:focus {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
   }
 
   &.rick-morty:hover {
     border-color: #00b4d8;
+    background: #e6f7ff;
   }
 
   &.harry-potter:hover {
     border-color: #8b5a2b;
+    background: #fdf2e9;
   }
 
   &.active {
-    background: #667eea;
+    background: #4c51bf;
     color: white;
-    border-color: #667eea;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    border-color: #4c51bf;
+    box-shadow: 0 2px 8px rgba(76, 81, 191, 0.4);
   }
 
   &.active.rick-morty {
-    background: #00b4d8;
-    border-color: #00b4d8;
-    box-shadow: 0 2px 8px rgba(0, 180, 216, 0.3);
+    background: #0099cc;
+    border-color: #0099cc;
+    box-shadow: 0 2px 8px rgba(0, 153, 204, 0.4);
   }
 
   &.active.harry-potter {
-    background: #8b5a2b;
-    border-color: #8b5a2b;
-    box-shadow: 0 2px 8px rgba(139, 90, 43, 0.3);
+    background: #7a4d1f;
+    border-color: #7a4d1f;
+    box-shadow: 0 2px 8px rgba(122, 77, 31, 0.4);
   }
 
   @media (max-width: 768px) {
@@ -106,17 +114,24 @@ export const HeaderSelect = styled.select`
   border-radius: 6px;
   padding: 0.25rem 0.75rem;
   font-size: 0.87rem;
-  color: #2d3748;
+  color: #1a202c;
   background: #fff;
   outline: none;
   transition: border-color 0.2s;
   box-shadow: none;
   margin-left: 0.5rem;
   cursor: pointer;
+  font-weight: 500;
 
   &:hover,
   &:focus {
-    border-color: #a0aec0;
+    border-color: #4a5568;
+    background: #f7fafc;
+  }
+
+  &:focus {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {
@@ -127,5 +142,6 @@ export const HeaderSelect = styled.select`
 `;
 
 export const HeaderOption = styled.option`
-  color: #2d3748;
+  color: #1a202c;
+  background: #ffffff;
 `;
