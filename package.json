@@ -9,7 +9,7 @@
     "serve:remotes": "pnpm --parallel --filter \"./remote\" serve",
     "dev:hosts": "pnpm --filter \"./host\" dev",
     "test:host": "pnpm --filter \"./host\" test",
-    "test:remotes": "pnpm --parallel --filter \"./remote\" test",
+    "test:remotes": "pnpm --parallel --filter \"./remote/**\" test",
     "stop": "kill-port --port 3000,3001,3002"
   },
   "keywords": [],

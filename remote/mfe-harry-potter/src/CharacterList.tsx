@@ -11,7 +11,7 @@ const CharacterListContainer = styled.div`
   overflow: auto;
 
   &.character-grid {
-    &--rick-morty {
+    &--harry-potter {
       background: rgba(0, 180, 216, 0.05);
       border-radius: 12px;
       padding: 2rem;
@@ -105,7 +105,7 @@ const CharacterText = styled.div`
 
 const SkeletonComponent = () => {
   return (
-    <CharacterSkeleton>
+    <CharacterSkeleton data-testid="character-skeleton">
       {Array.from({ length: 8 }).map((_, index) => (
         <SkeletonCard key={index}>
           <SkeletonImage />
@@ -126,9 +126,15 @@ export default function CharacterList() {
   }
 
   return (
-    <CharacterListContainer className="character-grid character-grid--rick-morty">
+    <CharacterListContainer
+      className="character-grid character-grid--harry-potter"
+      data-testid="character-list-container"
+    >
       {characters.map((character) => (
-        <CharacterCard key={character.id}>
+        <CharacterCard
+          key={character.id}
+          data-testid={`character-card-${character.id}`}
+        >
           <CharacterImage
             src={character.image}
             alt={character.name}

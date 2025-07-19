@@ -1,8 +1,8 @@
 import { lazy, Suspense, useState } from 'react';
-import { ContentArea, MainContainer } from './components/styled-components';
 import Header from './components/Header';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { ContentArea, MainContainer } from './components/layout';
 
 const RickAndMorty = lazy(() => import('RickAndMorty/CharacterList'));
 const HarryPotter = lazy(() => import('HarryPotter/CharacterList'));
