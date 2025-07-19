@@ -10,7 +10,7 @@ export default defineConfig({
       name: 'HarryPotter',
       filename: 'remoteEntry.js',
       exposes: {
-        './CharacterList': './src/CharacterList.tsx',
+        './CharacterList': './src/App.tsx',
       },
       shared: ['react', 'react-dom'],
     }),

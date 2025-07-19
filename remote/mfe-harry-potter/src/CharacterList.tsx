@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { useGetCharacters } from './hooks/useGetCharacters';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from './lang/i18n';
 
 const CharacterListContainer = styled.div`
   display: grid;
@@ -118,13 +116,8 @@ const SkeletonComponent = () => {
   );
 };
 
-export default function CharacterList({ language }: { language?: string }) {
+export default function CharacterList() {
   const { t } = useTranslation();
-  useEffect(() => {
-    if (language && i18n.language !== language) {
-      i18n.changeLanguage(language);
-    }
-  }, [language]);
 
   const { data: characters, isLoading } = useGetCharacters();
 
