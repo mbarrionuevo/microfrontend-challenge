@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const CharacterListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;
@@ -40,7 +40,7 @@ const CharacterImage = styled.img`
 
 const CharacterSkeleton = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const CharacterListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;
@@ -39,7 +39,7 @@ const CharacterImage = styled.img`
 
 const CharacterSkeleton = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1rem 0;
   height: 100%;
@@ -104,7 +104,7 @@ const CharacterText = styled.div`
 
 const SkeletonComponent = () => {
   return (
-    <CharacterSkeleton>
+    <CharacterSkeleton data-testid="character-skeleton">
       {Array.from({ length: 8 }).map((_, index) => (
         <SkeletonCard key={index}>
           <SkeletonImage />
@@ -124,9 +124,15 @@ export default function CharacterList() {
   }
 
   return (
-    <CharacterListContainer className="character-grid character-grid--rick-morty">
+    <CharacterListContainer
+      className="character-grid character-grid--rick-morty"
+      data-testid="character-list-container"
+    >
       {characters.map((character) => (
-        <CharacterCard key={character.id}>
+        <CharacterCard
+          key={character.id}
+          data-testid={`character-card-${character.id}`}
+        >
           <CharacterImage
             width={150}
             height={150}
