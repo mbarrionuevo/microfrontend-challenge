@@ -1,0 +1,21 @@
+{
+  "name": "micro-frontend",
+  "version": "1.0.0",
+  "description": "Micro-frontend challenge",
+  "scripts": {
+    "build": "pnpm --parallel --filter \"./**\" build",
+    "serve": "pnpm --parallel --filter \"./**\" preview",
+    "build:remotes": "pnpm --parallel --filter \"./remote\" build",
+    "serve:remotes": "pnpm --parallel --filter \"./remote\" serve",
+    "dev:hosts": "pnpm --filter \"./host\" dev",
+    "test:host": "pnpm --filter \"./host\" test",
+    "test:remotes": "pnpm --parallel --filter \"./remote\" test",
+    "stop": "kill-port --port 3000,3001,3002"
+  },
+  "keywords": [],
+  "author": "Matias Barrionuevo",
+  "license": "ISC",
+  "devDependencies": {
+    "kill-port": "^2.0.1"
+  }
+}
